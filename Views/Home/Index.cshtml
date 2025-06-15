@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<style>
+    body {
+        background-color: #fff0f6;
+    }
+
+    .main-title {
+        color: #d63384;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .custom-card {
+        background-color: #fff;
+        border: 1px solid #f8d7da;
+        border-radius: 12px;
+    }
+
+    .footer-note {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    .btn-pamela {
+        background-color: #ec407a;
+        border: none;
+        color: white;
+        font-weight: 600;
+    }
+
+        .btn-pamela:hover {
+            background-color: #d81b60;
+            color: white;
+        }
+</style>
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4 fw-bold main-title">🎀 Bienvenue sur <span class="text-decoration-underline">PAMELASTORE</span></h1>
+        <p class="lead text-muted">
+            La boutique de rêve pour des produits tendances, élégants et de qualité 💎.
+        </p>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card shadow-sm custom-card">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-dark mb-3">🧠 Technologies utilisées</h5>
+                    <ul class="list-unstyled ps-3">
+                        <li>🌐 ASP.NET Core MVC pour une structure claire et moderne</li>
+                        <li>🛢️ Entity Framework Core pour la gestion de base de données</li>
+                        <li>🎨 Bootstrap 5 pour un style responsive et fluide</li>
+                        <li>🛡️ Protection des données et validation des formulaires</li>
+                    </ul>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/aspnet/core" target="_blank">
+                            📖 Documentation ASP.NET Core
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-pamela btn-lg shadow" asp-controller="Products" asp-action="Index">
+            🛍️ Parcourir les Produits
+        </a>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="footer-note">
+            Développé par <strong>NOKAM NGUETA PAMELA</strong>, étudiant en <strong>4ᵉ année GINFO</strong>, filière <strong>II</strong> à l’<strong>ENSET de Douala</strong>.<br />
+            Matricule : <strong>24NIIL03A</strong> – Projet réalisé dans le cadre du cours <strong>ASP.NET (S2)</strong>.
+        </p>
+    </div>
+</div>

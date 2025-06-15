@@ -1,0 +1,87 @@
+﻿@model List<MeilleureBoutiqueMVC.Models.Product>
+@{
+    ViewData["Title"] = "Catalogue de PAMELASTORE";
+}
+
+<h2 class="text-center text-danger-emphasis mb-5 fw-bold">🎀 Catalogue de PAMELASTORE</h2>
+
+<div class="row mb-4">
+    <div class="col text-start">
+        <a class="btn btn-pink shadow fw-semibold" asp-controller="Products" asp-action="Create">
+            💗 Ajouter un article
+        </a>
+    </div>
+</div>
+
+<div class="table-responsive shadow-lg rounded-4 border border-2 border-pink">
+    <table class="table table-hover table-bordered align-middle">
+        <thead style="background-color: #f8bbd0;" class="text-center text-white fw-bold">
+            <tr>
+                <th>ID</th>
+                <th>Nom du Produit</th>
+                <th>Marque</th>
+                <th>Type</th>
+                <th>Prix</th>
+                <th>Illustration</th>
+                <th>Ajouté le</th>
+                <th>Gestion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produit in Model)
+            {
+                <tr class="text-center align-middle">
+                    <td>@produit.Id</td>
+                    <td class="text-pink">@produit.Name</td>
+                    <td>@produit.Brand</td>
+                    <td>@produit.Category</td>
+                    <td class="fw-bold text-danger">@produit.Price Fcfa</td>
+                    <td>
+                        <img src="/Products/@produit.ImageFileName" width="75" class="img-fluid rounded shadow-sm" />
+                    </td>
+                    <td>@produit.CreatedAt.ToString("dd MMM yyyy")</td>
+                    <td>
+                        <a class="btn btn-outline-pink btn-sm me-1"
+                           asp-controller="Products" asp-action="Edit" asp-route-id="@produit.Id">
+                            🖊️ Éditer
+                        </a>
+                        <a class="btn btn-outline-danger btn-sm"
+                           asp-controller="Products" asp-action="Delete" asp-route-id="@produit.Id">
+                            ❌ Retirer
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .btn-pink {
+        background-color: #ec407a;
+        color: white;
+    }
+
+        .btn-pink:hover {
+            background-color: #d81b60;
+            color: white;
+        }
+
+    .btn-outline-pink {
+        border: 1px solid #ec407a;
+        color: #ec407a;
+    }
+
+        .btn-outline-pink:hover {
+            background-color: #f8bbd0;
+            color: black;
+        }
+
+    .text-pink {
+        color: #d81b60;
+    }
+
+    .border-pink {
+        border-color: #f48fb1 !important;
+    }
+</style>

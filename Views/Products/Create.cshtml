@@ -1,0 +1,98 @@
+﻿@model ProductDto
+@{
+    ViewData["Title"] = "Ajout d’un Article | PAMELASTORE";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-9 rounded-4 shadow-lg border border-2 border-pink-subtle p-4 bg-white">
+        <h2 class="text-center text-pink mb-4 fw-bold">🌸 Ajouter un Article à PAMELASTORE</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">📝 Nom du produit</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Name" placeholder="Ex : Sac à main, Casque audio..." />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">🏷️ Marque</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Brand" placeholder="Ex : Samsung, Apple, Gucci..." />
+                    <span asp-validation-for="Brand" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">📂 Catégorie</label>
+                <div class="col-sm-8">
+                    <select class="form-select" asp-for="Category">
+                        <option value='Other'>Divers</option>
+                        <option value='Phones'>Téléphones</option>
+                        <option value='Computer'>Ordinateurs</option>
+                        <option value='Accessories'>Accessoires</option>
+                        <option value='Pinters'>Imprimantes</option>
+                        <option value='Cameras'>Caméras</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">💰 Prix</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Price" placeholder="Montant en FCFA" />
+                    <span asp-validation-for="Price" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">🧾 Description</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" asp-for="Description" rows="3" placeholder="Décrivez brièvement le produit..."></textarea>
+                    <span asp-validation-for="Description" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mb-4 row">
+                <label class="col-sm-4 col-form-label fw-semibold text-pink">📷 Image du produit</label>
+                <div class="col-sm-8">
+                    <input type="file" class="form-control" asp-for="ImageFile" />
+                    <span asp-validation-for="ImageFile" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row justify-content-around mt-4">
+                <div class="col-sm-5 d-grid">
+                    <button type="submit" class="btn btn-pink fw-bold shadow">
+                        💾 Sauvegarder
+                    </button>
+                </div>
+                <div class="col-sm-5 d-grid">
+                    <a class="btn btn-outline-secondary fw-bold" asp-controller="Products" asp-action="Index" role="button">
+                        🔙 Retour
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .text-pink {
+        color: #c2185b;
+    }
+
+    .btn-pink {
+        background-color: #ec407a;
+        color: #fff;
+    }
+
+        .btn-pink:hover {
+            background-color: #d81b60;
+        }
+
+    .border-pink-subtle {
+        border-color: #f8bbd0 !important;
+    }
+</style>
